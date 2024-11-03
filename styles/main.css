@@ -370,66 +370,66 @@ h2.visible {
     left: 100%;
 }
 
-
-/* End of Rooms Section */
-
 /* Amenities Section */
-
 .amenities {
     padding: 6rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: var(--light-bg);
 }
 
 .amenities-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .amenity-card {
     background: var(--white);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    flex: 0 1 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.amenity-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .amenity-card i {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.amenity-card:hover i {
+    transform: scale(1.1);
 }
 
 .amenity-card h3 {
     font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .amenity-card p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text-color);
+    line-height: 1.6;
 }
 
 .amenity-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: linear-gradient(to bottom right, var(--white), #f8f9fa);
 }
-
-
-
-/* End of Amenities Section */
 
 /* Contact Section */
 .contact {
@@ -715,14 +715,21 @@ h2.visible {
         justify-content: center;
     }
 
-    .room-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
+    .amenities {
+        padding: 4rem 1rem;
     }
-
-    .amenities-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 1rem;
+    
+    .amenities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .amenity-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .amenity-card i {
+        font-size: 3rem;
     }
 }
 
@@ -737,5 +744,3 @@ h2.visible {
 .navbar::after {
     display: none !important;
 }
-
-

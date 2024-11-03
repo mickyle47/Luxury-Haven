@@ -76,7 +76,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 const elementsToAnimate = [
     '.room-card', 
-    '.amenity-item', 
+    '.amenity-card', // Updated from .amenity-item to .amenity-card
     '.stat', 
     '.about-content', 
     'h2', 
@@ -196,7 +196,7 @@ window.addEventListener('scroll', () => {
 
 // Add hover effects for interactive elements
 const interactiveElements = document.querySelectorAll(
-    '.cta-button, .room-button, .submit-button, .amenity-item, .social-links a'
+    '.cta-button, .room-button, .submit-button, .amenity-card, .social-links a'
 );
 
 interactiveElements.forEach(element => {
