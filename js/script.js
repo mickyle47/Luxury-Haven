@@ -76,13 +76,14 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 const elementsToAnimate = [
     '.room-card', 
-    '.amenity-card', // Updated from .amenity-item to .amenity-card
+    '.amenity-card',
     '.stat', 
     '.about-content', 
     'h2', 
     '.contact-container', 
     '.footer-content',
-    '.quick-links li'
+    '.quick-links li',
+    '.testimonial-card'  // Added testimonial-card to animate
 ];
 
 elementsToAnimate.forEach(selector => {
